@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <div class="media">
+        <div class="media-body">
+            {% block event %}{% endblock %}
+            <button type="button" class="btn btn-outline-info">Add To Wishlist</button>
+        </div>
+    </div>
+</div>
+{% endblock content %}

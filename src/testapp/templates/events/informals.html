@@ -1,0 +1,112 @@
+{% extends "layout2.html" %}
+{% block content %}
+<head>
+<style>
+.xop-grid li {
+    	width: 328px;
+    	height: 328px;
+    	display: inline-block;
+    	margin: 20px;
+    }
+
+.xop-box {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	cursor: pointer;
+    border-radius: 10px;
+    -webkit-transition: 0.3s ease-in-out,
+    -webkit-transform 0.3s ease-in-out;
+	-moz-transition:  0.3s ease-in-out,
+    -moz-transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out,
+    transform 0.3s ease-in-out, ;
+}
+
+.xop-box:hover {
+	transform: scale(1.05);
+}
+
+.xop-img-1 {
+	background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), /* bottom, image */
+	url(../static/events_img/informals.jpg);
+}
+
+.xop-img-2 {
+	background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), /* bottom, image */
+    url(../static/events_img/informals.jpg);
+}
+
+.xop-img-3 {
+	background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), /* bottom, image */
+    url(../static/events_img/informals.jpg);
+}
+
+.xop-info {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+}
+
+.xop-info h3 {
+	font-family: 'Pacifico', cursive;
+	font-weight: 400;
+	color: #fff;
+	font-size: 42px;
+	margin: 0 30px;
+	padding: 100px 0 0 0;
+	line-height: 1.5;
+}
+
+.xop-info p {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #fff;
+	padding: 4px 5px;
+	margin: 0 30px;
+	font-size: 14px;
+	line-height: 2;
+}
+
+h1{
+    text-align: center
+}
+</style>
+</head>
+<div>
+    <h1>Events Categories</h1>
+</div>
+<div>
+    <h1>List</h1>
+</div>
+<div class="xop-section">
+  <ul class="xop-grid">
+    <li>
+      <div class="xop-box xop-img-1">
+        <a href="{{ url_for('events.informals1') }}">
+        <div class="xop-info">
+          <h3>Informals-1</h3>
+          <p>Nulla commodo iaculis vulputate.</p>
+        </div></a>
+      </div>
+    </li>
+    <li>
+      <div class="xop-box xop-img-2">
+          <a href="{{ url_for('events.informals2') }}">
+        <div class="xop-info">
+          <h3>Informals-2</h3>
+          <p>Nulla commodo iaculis vulputate.</p>
+        </div></a>
+      </div>
+    </li>
+    <li>
+      <div class="xop-box xop-img-3">
+        <a href="{{ url_for('events.informals3') }}">
+        <div class="xop-info">
+          <h3>Informals-3</h3>
+          <p>Nulla commodo iaculis vulputate.</p>
+        </div></a>
+      </div>
+    </li>
+  </ul>
+</div>
+{% endblock content %}

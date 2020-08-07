@@ -1,0 +1,42 @@
+<img class="image" border="0" alt="Concert1" src="{{ url_for('static', filename='events/concerts.jpg') }}" width="320" height="240">
+
+<!--<form action="{{ url_for('main.pay') }}" method="POST">
+    <script>
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="{{ pub_key }}"
+        data-amount="{{ charge_amount }}"
+        data-name="Demo Site"
+        data-description="Widget"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+    </script>  -->
+
+    <div class="form-group">
+        {{ form.price.label(class="form-control-label") }}
+        {% if form.price.errors %}
+            {{ form.price(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.price.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.price(class="form-control form-control-lg") }}
+        {% endif %}
+    </div>
+
+    <div class="xop-section">
+      <ul class="xop-grid">
+          {% for eventtype in eventtypes.items %}
+            <li>
+              <div class="xop-box xop-img" src="{{ image_file }}">
+                <a href="{{ url_for(z) }}">
+                <div class="xop-info">
+                  <h3>{{ eventtype.title }}</h3>
+                  <p>Nulla commodo iaculis vulputate.</p>
+                </div></a>
+              </div>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
